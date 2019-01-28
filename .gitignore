@@ -83,7 +83,7 @@ fabric.properties
 
 /todoapp/migrations/*
 
-
+*.pyc
 *.egg-info
 *.pot
 *.py[co]

@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b9a611f-1e47-4259-bb68-7b685fd97b77" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todoapp/permissions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoAppProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoAppProject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/migrations/0002_auto_20190128_0715.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/migrations/0003_auto_20190128_0903.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/migrations/0004_auto_20190128_0952.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/serlializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/serlializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todoapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todoapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,13 +34,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gitignore" value="27" />
+          <entry key="gitignore" value="32" />
           <entry key="py" value="1652" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="27" />
+          <entry key="PLAIN_TEXT" value="32" />
           <entry key="Python" value="1652" />
         </counts>
       </usages-collector>
@@ -123,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
+            <state relative-caret-position="199">
+              <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -430,8 +418,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
+        <state relative-caret-position="199">
+          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
         </state>
       </provider>
     </entry>
