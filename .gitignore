@@ -24,6 +24,7 @@
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
+.idea/workspace.xml
 
 # Gradle
 .idea/**/gradle.xml
@@ -45,6 +46,7 @@ cmake-build-*/
 
 # File-based project format
 *.iws
+db.sqlite3
 
 # IntelliJ
 out/
