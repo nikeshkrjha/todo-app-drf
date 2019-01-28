@@ -22,12 +22,7 @@ class Todo(models.Model):
         Use the `pygments` library to create a highlighted HTML
         representation of the code snippet.
         """
-        # lexer = get_lexer_by_name(self.language)
-        # linenos = 'table' if self.linenos else False
-        # options = {'title': self.title} if self.title else {}
-        # formatter = HtmlFormatter(style=self.style, linenos=linenos,
-        #                           full=True, **options)
-        # self.highlighted = highlight(self.code, lexer, formatter)
+
         if self.pk is None:
             self.created_date = datetime.date.today()
         self.updated_date = datetime.date.today()
@@ -40,5 +35,10 @@ class Todo(models.Model):
 class AppUser(User):
     user_email = models.EmailField(blank=False, verbose_name="Email", )
     user_name = models.CharField(blank=False, verbose_name="Username", max_length=100)
+
+
+class Category(models.Model):
+    category_name = models.CharField(max_length=200,blank=True,verbose_name='Category Name',)
+    created_by = created_by = models.ForeignKey('auth.User', related_name='todo_catt', on_delete=models.CASCADE,null=True, blank=True)
 
 
