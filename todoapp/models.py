@@ -12,10 +12,29 @@ class Todo(models.Model):
     created_date = models.DateField(verbose_name='Created Date', default=datetime.date.today())
     updated_date = models.DateField(verbose_name='Updated Date', default=datetime.date.today())
     todo_status = models.BooleanField(default=False,verbose_name='Completed',)
-    created_by = models.ForeignKey('AppUser', on_delete=models.CASCADE, )
+    created_by = models.ForeignKey('auth.User', related_name='todos', on_delete=models.CASCADE,null=True, blank=True)
 
     def __str__(self):
         return self.todo_title + " " + str(self.created_date)
+
+    def save(self, *args, **kwargs):
+        """
+        Use the `pygments` library to create a highlighted HTML
+        representation of the code snippet.
+        """
+        # lexer = get_lexer_by_name(self.language)
+        # linenos = 'table' if self.linenos else False
+        # options = {'title': self.title} if self.title else {}
+        # formatter = HtmlFormatter(style=self.style, linenos=linenos,
+        #                           full=True, **options)
+        # self.highlighted = highlight(self.code, lexer, formatter)
+        if self.pk is None:
+            self.created_date = datetime.date.today()
+        self.updated_date = datetime.date.today()
+        super(Todo, self).save()
+        super(Todo, self).save(*args, **kwargs)
+
+
 
 
 class AppUser(User):
