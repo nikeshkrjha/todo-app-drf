@@ -34,11 +34,15 @@ class TodoList(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = TodoSerializer(data=request.data, many=True)
+        print(request.data['todos'])
+        serializer = TodoSerializer(data=request.data['todos'])
         if serializer.is_valid():
+            print(serializer.validated_data)
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.validated_data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

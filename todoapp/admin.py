@@ -8,9 +8,11 @@ from .models import Todo, AppUser, Category
 
 
 class TodoAdmin(admin.ModelAdmin):
-    list_display = ('todo_title', 'todo_desc', 'created_date', 'updated_date', 'todo_status', 'created_by')
-    exclude = ('created_by',)
+    list_display = ('todo_title', 'todo_desc', 'created_date', 'updated_date', 'todo_status', 'created_by', 'category')
+    exclude = ('created_by','updated_date')
     search_fields = ('todo_title', 'todo_desc', )
+    list_filter = ('created_by','category')
+    list_per_page = 15
     # form = TodoForm
 
     class Meta:
