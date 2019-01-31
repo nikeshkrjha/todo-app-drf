@@ -43,6 +43,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Todo, TodoAdmin)
-admin.site.register(AppUser)
+# admin.site.register(AppUser)
 admin.site.register(Category, CategoryAdmin)
 

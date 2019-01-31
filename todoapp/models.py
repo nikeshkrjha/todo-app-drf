@@ -19,16 +19,18 @@ class Todo(models.Model):
     def __str__(self):
         return self.todo_title + " " + str(self.created_date)
 
-    def save(self, *args, **kwargs):
-        """
-        Use the `pygments` library to create a highlighted HTML
-        representation of the code snippet.
-        """
-        if self.pk is None:
-            self.created_date = datetime.date.today()
-        self.updated_date = datetime.date.today()
-        super(Todo, self).save()
-        # super(Todo, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     """
+    #     Use the `pygments` library to create a highlighted HTML
+    #     representation of the code snippet.
+    #     """
+    #     if self.pk is None:
+    #         self.created_date = datetime.date.today()
+    #     # self.created_by = UserSerializer(data=self.created_by).data
+    #     self.updated_date = datetime.date.today()
+    #     super(Todo, self).save()
+    #     # super(Todo, self).save(*args, **kwargs)
+
 
 
 
