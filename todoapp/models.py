@@ -17,7 +17,11 @@ class Todo(models.Model):
     category = models.ForeignKey('Category', related_name='note_category', on_delete=models.CASCADE,null=True, blank=True)
 
     def __str__(self):
-        return self.todo_title + " " + str(self.created_date)
+        return self.todo_title
+
+    @staticmethod
+    def autocomplete_search_fields():
+        return 'todo_title',
 
     # def save(self, *args, **kwargs):
     #     """

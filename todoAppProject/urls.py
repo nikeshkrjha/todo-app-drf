@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('todoapp.urls')),
+    url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
 ]
 
 urlpatterns += [

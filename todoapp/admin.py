@@ -5,7 +5,19 @@ from django.forms import TextInput, Textarea
 # Register your models here.
 
 from .models import Todo, AppUser, Category
+from jet.admin import CompactInline
 
+
+# class CategoryInline(admin.TabularInline):
+#     model = Todo
+#     extra = 1
+#     show_change_link = True
+#
+#
+# class StateCitiesInline(CompactInline):
+#     model = Todo
+#     extra = 1
+#     show_change_link = True
 
 class TodoAdmin(admin.ModelAdmin):
     list_display = ('todo_title', 'todo_desc', 'created_date', 'updated_date', 'todo_status', 'created_by', 'category')
@@ -13,6 +25,7 @@ class TodoAdmin(admin.ModelAdmin):
     search_fields = ('todo_title', 'todo_desc', )
     list_filter = ('created_by','category')
     list_per_page = 15
+    # inlines = (CategoryInline, )
     # form = TodoForm
 
     class Meta:
