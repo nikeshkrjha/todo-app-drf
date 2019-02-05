@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from todoapp.models import Todo, AppUser
+from todoapp.models import Todo, AppUser, Category
 from django.contrib.auth.models import User
 
 
@@ -8,7 +8,7 @@ class TodoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Todo
-        fields = ('id', 'todo_title', 'todo_desc', 'created_date', 'updated_date', 'todo_status', 'created_by')
+        fields = ('id', 'todo_title', 'todo_desc', 'created_date', 'updated_date', 'todo_status', 'created_by', 'category')
 
 
 
@@ -19,3 +19,9 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'todos', 'owner')
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ('id', 'category_name', 'created_by')

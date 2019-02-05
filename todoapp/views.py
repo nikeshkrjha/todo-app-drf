@@ -1,22 +1,20 @@
-from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.renderers import JSONRenderer
-from rest_framework.parsers import JSONParser
-from todoapp.models import Todo
-from todoapp.serlializers import TodoSerializer, UserSerializer
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.views import APIView
-from django.http import Http404
 from django.contrib.auth.models import User
-from rest_framework import generics
-from rest_framework import permissions
+from django.http import Http404, HttpResponse, JsonResponse
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework import generics, permissions, status
+from rest_framework.decorators import api_view
+from rest_framework.parsers import JSONParser
+from rest_framework.renderers import JSONRenderer
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from todoapp.models import Category, Todo
 from todoapp.permissions import IsOwnerOrReadOnly
-
+from todoapp.serlializers import (CategorySerializer, TodoSerializer,
+                                  UserSerializer)
 
 # Create your views here.
+
 
 def index(request):
     return HttpResponse("Hello, world. You're at the todoapp index.")
@@ -31,7 +29,10 @@ class TodoList(APIView):
     def get(self, request, format=None):
         snippets = Todo.objects.all()
         serializer = TodoSerializer(snippets, many=True)
-        return Response(serializer.data)
+        categories = Category.objects.all()
+        serializer2 = CategorySerializer(categories, many=True)
+
+        return Response({'data': {'notes': serializer.data, 'categories': serializer2.data}})
 
     def post(self, request, format=None):
         print(request.data['todos'])
@@ -41,8 +42,6 @@ class TodoList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -54,6 +53,7 @@ class TodoDetail(APIView):
     """
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
+
     def get_object(self, pk):
         try:
             return Todo.objects.get(pk=pk)
@@ -77,7 +77,6 @@ class TodoDetail(APIView):
         snippet = self.get_object(pk)
         snippet.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
 
 
 class UserList(generics.ListAPIView):
