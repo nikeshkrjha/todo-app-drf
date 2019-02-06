@@ -24,7 +24,8 @@ class TodoList(APIView):
     """
     List all snippets, or create a new snippet.
     """
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    
 
     def get(self, request, format=None):
         snippets = Todo.objects.all()
