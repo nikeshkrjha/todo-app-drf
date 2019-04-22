@@ -4,6 +4,11 @@ Sample Todo App using Django REST Framework and DJango
 ## Functionalities
 - Perform CRUD operations using Django Admin Dashboard and web api
 
+## API Endpoints
+- List all notes: http://hsekin.pythonanywhere.com/todoapp/api/todos/
+- List a single note: http://hsekin.pythonanywhere.com/todoapp/api/todos/1 (1 is id of the note here)
+
+
 # Sample API response
 http://hsekin.pythonanywhere.com/todoapp/api/todos/
 
