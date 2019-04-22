@@ -1,7 +1,7 @@
 # TODO App in Django
 Sample Todo App using Django REST Framework and DJango
 
-Functionalities
+## Functionalities
     Perform CRUD operations using Django Admin Dashboard and web api
 
 # Sample API response
